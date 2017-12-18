@@ -465,6 +465,7 @@ Vagrant.configure(2) do |config|
 
         override.vm.network :private_network, ip: machine_type['ip']
 
+        override.vm.network "public_network", type: "dhcp"
         # guest should sync time if more than 10s off host
         v.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
       end
