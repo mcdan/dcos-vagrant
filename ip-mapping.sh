@@ -1,0 +1,1 @@
+vagrant ssh p1 -c 'echo $(hostname) : $(ip address | grep enp0s8 | grep inet | tr -d "[:blank:]" | cut -c 5- | cut -d "/" -f 1) - $(ip address | grep enp0s9 | grep inet | tr -d "[:blank:]" | cut -c 5- | cut -d "/" -f 1)'
